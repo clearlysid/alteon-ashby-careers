@@ -46,6 +46,24 @@ body {
   font-family: var(--fontFamily);
 }
 
+/* Ashby's empty noscript element otherwise creates an anonymous first line. */
+noscript {
+  display: none !important;
+}
+
+body:has(.ashby-job-board-heading) {
+  font-size: 0;
+  line-height: 0;
+  padding-top: 7.2px;
+}
+
+#root:has(.ashby-job-board-heading)
+  > div
+  > div:has(> .ashby-job-board-heading) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .ashby-job-board-heading {
   margin: 0 0 32px !important;
   color: var(--alteon-text) !important;
@@ -97,23 +115,43 @@ div[class*="_content_"]:has(.ashby-job-board-filter):has(
 
 .ashby-job-board-filters-label {
   display: block !important;
-  margin: 0 0 18px !important;
-  color: var(--alteon-text) !important;
+  margin: 0 !important;
+  color: var(--alteon-muted) !important;
   font-family: "DM Mono", monospace !important;
-  font-size: 11px !important;
-  font-weight: 500 !important;
+  font-size: 0 !important;
+  font-weight: 400 !important;
   line-height: 1.4 !important;
   letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
 }
 
+.ashby-job-board-filters-label::before {
+  content: "[ FILTERS ]";
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+}
+
+div:has(> .ashby-job-board-filters-label) {
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+}
+
 .ashby-job-board-reset-filters-label {
   display: block !important;
-  margin: 12px 0 0 !important;
+  margin: 0 !important;
   color: var(--alteon-muted) !important;
   font-family: "DM Mono", monospace !important;
   font-size: 10px !important;
   text-transform: uppercase !important;
+}
+
+.ashby-job-board-reset-filters-label:disabled {
+  display: none !important;
 }
 
 .ashby-job-board-filter {
@@ -128,9 +166,10 @@ div:has(> div > .ashby-job-board-filter) {
   grid-template-columns: minmax(0, 1fr) !important;
   gap: 10px !important;
   width: 100% !important;
+  max-width: 360px !important;
 }
 
-.ashby-job-board-filter select {
+select.ashby-job-board-filter {
   width: 100% !important;
   min-height: 48px !important;
   padding: 0 38px 0 14px !important;
@@ -144,8 +183,8 @@ div:has(> div > .ashby-job-board-filter) {
   outline: none !important;
 }
 
-.ashby-job-board-filter select:hover,
-.ashby-job-board-filter select:focus {
+select.ashby-job-board-filter:hover,
+select.ashby-job-board-filter:focus {
   border-color: var(--alteon-text) !important;
 }
 
@@ -329,8 +368,8 @@ a[href="https://www.ashbyhq.com"] {
   row-gap: 48px !important;
   align-items: start !important;
   width: 100% !important;
-  max-width: 1360px !important;
-  margin: 0 auto !important;
+  max-width: none !important;
+  margin: 0 !important;
 }
 
 #root:has(.ashby-job-posting-heading) > div[class*="_sticky_"] {
@@ -374,6 +413,7 @@ a[href="https://www.ashbyhq.com"] {
   position: sticky !important;
   top: 24px !important;
   width: 100% !important;
+  margin: 32px 0 0 !important;
   padding: 0 !important;
   color: var(--alteon-muted) !important;
   background: transparent !important;
@@ -414,6 +454,10 @@ a[href="https://www.ashbyhq.com"] {
 .ashby-job-posting-description-container {
   width: 100% !important;
   max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
 }
 
 .ashby-job-posting-description {
@@ -571,6 +615,7 @@ a[href="https://www.ashbyhq.com"] {
   .ashby-job-posting-left-pane {
     position: static !important;
     max-width: none !important;
+    margin-top: 0 !important;
   }
 
   .ashby-job-posting-right-pane {
