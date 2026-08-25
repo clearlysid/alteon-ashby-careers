@@ -60,7 +60,9 @@ body {
   color: var(--alteon-muted) !important;
 }
 
-:has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list)) {
+div[class*="_content_"]:has(.ashby-job-board-filter):has(
+    .ashby-job-posting-brief-list
+  ) {
   display: grid !important;
   grid-template-columns: minmax(220px, 280px) minmax(0, 1fr) !important;
   align-items: start !important;
@@ -68,8 +70,10 @@ body {
   width: 100% !important;
 }
 
-:has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list))
-  > :has(.ashby-job-board-filter) {
+div[class*="_content_"]:has(.ashby-job-board-filter):has(
+    .ashby-job-posting-brief-list
+  )
+  > div:has(.ashby-job-board-filter) {
   grid-column: 1 !important;
   position: sticky !important;
   top: 24px !important;
@@ -79,8 +83,10 @@ body {
   border: 1px solid var(--alteon-border) !important;
 }
 
-:has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list))
-  > :has(.ashby-job-posting-brief-list) {
+div[class*="_content_"]:has(.ashby-job-board-filter):has(
+    .ashby-job-posting-brief-list
+  )
+  > div:has(.ashby-job-posting-brief-list) {
   grid-column: 2 !important;
   min-width: 0 !important;
   width: 100% !important;
@@ -110,7 +116,15 @@ body {
 .ashby-job-board-filter {
   display: block !important;
   width: 100% !important;
-  margin: 0 0 10px !important;
+  margin: 0 !important;
+}
+
+/* Ashby lays filters out two-up by default; the sidebar needs a single stack. */
+div:has(> div > .ashby-job-board-filter) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 10px !important;
+  width: 100% !important;
 }
 
 .ashby-job-board-filter select {
@@ -263,6 +277,11 @@ body {
   margin: 0 !important;
   color: inherit !important;
   font: inherit !important;
+}
+
+/* Ashby's attribution remains in the DOM but is not part of the composed page. */
+a[href="https://www.ashbyhq.com"] {
+  display: none !important;
 }
 
 .ashby-job-board-back-to-all-jobs-button {
@@ -459,21 +478,29 @@ body {
 }
 
 @media (max-width: 809px) {
-  :has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list)),
+  div[class*="_content_"]:has(.ashby-job-board-filter):has(
+      .ashby-job-posting-brief-list
+    ),
   :has(> .ashby-job-posting-left-pane ~ .ashby-job-posting-right-pane) {
     grid-template-columns: minmax(0, 1fr) !important;
     gap: 24px !important;
   }
 
-  :has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list))
-    > :has(.ashby-job-board-filter),
-  :has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list))
-    > :has(.ashby-job-posting-brief-list) {
+  div[class*="_content_"]:has(.ashby-job-board-filter):has(
+      .ashby-job-posting-brief-list
+    )
+    > div:has(.ashby-job-board-filter),
+  div[class*="_content_"]:has(.ashby-job-board-filter):has(
+      .ashby-job-posting-brief-list
+    )
+    > div:has(.ashby-job-posting-brief-list) {
     grid-column: 1 !important;
   }
 
-  :has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list))
-    > :has(.ashby-job-board-filter),
+  div[class*="_content_"]:has(.ashby-job-board-filter):has(
+      .ashby-job-posting-brief-list
+    )
+    > div:has(.ashby-job-board-filter),
   .ashby-job-posting-left-pane {
     position: static !important;
   }
