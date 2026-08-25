@@ -1,0 +1,505 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap");
+
+@font-face {
+  font-family: "TT Neoris Pro";
+  src: url("https://framerusercontent.com/assets/CY04TgzzfAKMYO3J5FzTXXhrbKE.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Neoris Pro";
+  src: url("https://framerusercontent.com/assets/CnYhxEU4TKervNqnjEmftKIIkCA.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --colorAppBackground: transparent;
+  --colorPrimary600: #0a0e14;
+  --colorPrimary900: #0a0e14;
+  --widthMaxContent: 1120px;
+  --widthMaxJobBoard: 1120px;
+  --borderRadiusContainer: 0;
+  --borderRadiusControl: 0;
+  --borderRadiusButton: 999px;
+  --fontFamily: "TT Neoris Pro", Arial, sans-serif;
+  --alteon-text: #0a0e14;
+  --alteon-muted: #6b7280;
+  --alteon-border: #c7c7c7;
+  --alteon-panel: #fafafa;
+  --alteon-button: #f5f5f3;
+  --alteon-accent: #b2eafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  color: var(--alteon-text);
+  background: transparent;
+  font-family: var(--fontFamily);
+}
+
+.ashby-job-board-heading {
+  margin: 0 0 32px !important;
+  color: var(--alteon-text) !important;
+  font-family: "TT Neoris Pro", Arial, sans-serif !important;
+  font-size: clamp(32px, 4vw, 48px) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.ashby-job-board-heading-count {
+  color: var(--alteon-muted) !important;
+}
+
+:has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list)) {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 48px !important;
+  width: 100% !important;
+}
+
+:has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list))
+  > :has(.ashby-job-board-filter) {
+  grid-column: 1 !important;
+  position: sticky !important;
+  top: 24px !important;
+  width: 100% !important;
+  padding: 20px !important;
+  background: var(--alteon-panel) !important;
+  border: 1px solid var(--alteon-border) !important;
+}
+
+:has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list))
+  > :has(.ashby-job-posting-brief-list) {
+  grid-column: 2 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.ashby-job-board-filters-label {
+  display: block !important;
+  margin: 0 0 18px !important;
+  color: var(--alteon-text) !important;
+  font-family: "DM Mono", monospace !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+
+.ashby-job-board-reset-filters-label {
+  display: block !important;
+  margin: 12px 0 0 !important;
+  color: var(--alteon-muted) !important;
+  font-family: "DM Mono", monospace !important;
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+}
+
+.ashby-job-board-filter {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 0 10px !important;
+}
+
+.ashby-job-board-filter select {
+  width: 100% !important;
+  min-height: 48px !important;
+  padding: 0 38px 0 14px !important;
+  color: var(--alteon-text) !important;
+  background-color: #fff !important;
+  border: 1px solid var(--alteon-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: "TT Neoris Pro", Arial, sans-serif !important;
+  font-size: 14px !important;
+  outline: none !important;
+}
+
+.ashby-job-board-filter select:hover,
+.ashby-job-board-filter select:focus {
+  border-color: var(--alteon-text) !important;
+}
+
+.ashby-department-heading,
+.ashby-job-posting-brief-department-heading {
+  margin: 32px 0 12px !important;
+  color: var(--alteon-muted) !important;
+  font-family: "DM Mono", monospace !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+
+.ashby-department-heading:first-child {
+  margin-top: 0 !important;
+}
+
+.ashby-department-heading-level,
+.ashby-job-posting-brief-department-heading-level {
+  color: inherit !important;
+  font: inherit !important;
+}
+
+.ashby-job-posting-brief-list {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ashby-job-posting-brief-list > div {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.ashby-job-posting-brief {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  color: var(--alteon-text) !important;
+  background: #fff !important;
+  border: 1px solid var(--alteon-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease !important;
+}
+
+.ashby-job-posting-brief:hover {
+  border-color: var(--alteon-text) !important;
+  box-shadow: 0 6px 20px rgba(10, 14, 20, 0.07) !important;
+  transform: translateY(-2px);
+}
+
+.ashby-job-posting-brief-title {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 65px !important;
+  margin: 0 !important;
+  padding: 16px 150px 16px 20px !important;
+  color: var(--alteon-text) !important;
+  background: #fff !important;
+  font-family: "TT Neoris Pro", Arial, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.ashby-job-posting-brief-title h3 {
+  margin: 0 !important;
+  color: inherit !important;
+  font: inherit !important;
+}
+
+.ashby-job-posting-brief::after {
+  content: "Apply now ↗";
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 10px 16px;
+  color: var(--alteon-text);
+  background: var(--alteon-button);
+  border-radius: 999px;
+  font-family: "TT Neoris Pro", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.ashby-job-posting-brief:hover::after {
+  background: var(--alteon-accent);
+  transform: translateX(2px);
+}
+
+.ashby-job-posting-brief-details {
+  display: block !important;
+  width: 100% !important;
+  min-height: 64px !important;
+  margin: 0 !important;
+  padding: 22px 20px !important;
+  color: var(--alteon-muted) !important;
+  background: var(--alteon-panel) !important;
+  border-top: 1px solid var(--alteon-border) !important;
+  font-family: "DM Mono", monospace !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.025em !important;
+  text-transform: uppercase !important;
+}
+
+.ashby-job-posting-brief-details p {
+  margin: 0 !important;
+  color: inherit !important;
+  font: inherit !important;
+}
+
+.ashby-job-board-back-to-all-jobs-button {
+  margin: 0 0 24px !important;
+  padding: 10px 16px !important;
+  color: var(--alteon-text) !important;
+  background: var(--alteon-button) !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  font-family: "TT Neoris Pro", Arial, sans-serif !important;
+  font-size: 13px !important;
+  text-decoration: none !important;
+}
+
+.ashby-job-board-back-to-all-jobs-button:hover {
+  background: var(--alteon-accent) !important;
+}
+
+.ashby-job-posting-header {
+  margin: 0 0 32px !important;
+  padding: 0 0 28px !important;
+  border-bottom: 1px solid var(--alteon-border) !important;
+}
+
+.ashby-job-posting-heading {
+  margin: 0 !important;
+  color: var(--alteon-text) !important;
+  font-family: "TT Neoris Pro", Arial, sans-serif !important;
+  font-size: clamp(32px, 4.5vw, 56px) !important;
+  font-weight: 400 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.04em !important;
+}
+
+:has(> .ashby-job-posting-left-pane ~ .ashby-job-posting-right-pane) {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 48px !important;
+  width: 100% !important;
+}
+
+.ashby-job-posting-left-pane {
+  position: sticky !important;
+  top: 24px !important;
+  width: 100% !important;
+  padding: 20px !important;
+  color: var(--alteon-muted) !important;
+  background: var(--alteon-panel) !important;
+  border: 1px solid var(--alteon-border) !important;
+  font-family: "DM Mono", monospace !important;
+  font-size: 11px !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0.025em !important;
+  text-transform: uppercase !important;
+}
+
+.ashby-job-posting-right-pane {
+  min-width: 0 !important;
+  width: 100% !important;
+  background: #fff !important;
+  border: 1px solid var(--alteon-border) !important;
+}
+
+.ashby-job-posting-right-pane-overview-tab,
+.ashby-job-posting-right-pane-application-tab {
+  padding: 16px 20px !important;
+  color: var(--alteon-text) !important;
+  background: #fff !important;
+  border: 0 !important;
+  font-family: "DM Mono", monospace !important;
+  font-size: 11px !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+.ashby-job-posting-right-pane-tab-slider {
+  background: var(--alteon-text) !important;
+}
+
+.ashby-job-posting-description-container {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.ashby-job-posting-description {
+  padding: 32px !important;
+  color: var(--alteon-text) !important;
+  font-family: "TT Neoris Pro", Arial, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+
+.ashby-job-posting-description h1,
+.ashby-job-posting-description h2,
+.ashby-job-posting-description h3 {
+  margin: 40px 0 14px !important;
+  color: var(--alteon-text) !important;
+  font-family: "TT Neoris Pro", Arial, sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.ashby-job-posting-description h2 {
+  font-size: 24px !important;
+}
+
+.ashby-job-posting-description h3 {
+  font-size: 19px !important;
+}
+
+.ashby-job-posting-description p,
+.ashby-job-posting-description ul,
+.ashby-job-posting-description ol {
+  margin: 0 0 18px !important;
+}
+
+.ashby-job-posting-description li {
+  margin-bottom: 8px !important;
+}
+
+.ashby-application-form-container {
+  padding: 32px !important;
+  background: #fff !important;
+}
+
+.ashby-application-form-section-container {
+  margin: 0 0 40px !important;
+}
+
+.ashby-application-form-section-header {
+  margin: 0 0 24px !important;
+  padding: 0 0 14px !important;
+  border-bottom: 1px solid var(--alteon-border) !important;
+}
+
+.ashby-application-form-section-header-title,
+.ashby-application-form-question-title {
+  color: var(--alteon-text) !important;
+  font-family: "TT Neoris Pro", Arial, sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.ashby-application-form-field-entry {
+  margin-bottom: 20px !important;
+}
+
+.ashby-application-form-input-text,
+.ashby-application-form-input-textarea,
+.ashby-application-form-input-dropdown-select {
+  width: 100% !important;
+  padding: 13px 14px !important;
+  color: var(--alteon-text) !important;
+  background: #fff !important;
+  border: 1px solid var(--alteon-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: "TT Neoris Pro", Arial, sans-serif !important;
+  font-size: 15px !important;
+  outline: none !important;
+}
+
+.ashby-application-form-input-text:focus,
+.ashby-application-form-input-textarea:focus,
+.ashby-application-form-input-dropdown-select:focus {
+  border-color: var(--alteon-text) !important;
+}
+
+.ashby-application-form-input-file-dropzone {
+  padding: 28px !important;
+  background: var(--alteon-panel) !important;
+  border: 1px dashed var(--alteon-border) !important;
+  border-radius: 0 !important;
+}
+
+.ashby-application-form-submit-button {
+  min-height: 48px !important;
+  padding: 12px 22px !important;
+  color: #fff !important;
+  background: var(--alteon-text) !important;
+  border: 1px solid var(--alteon-text) !important;
+  border-radius: 999px !important;
+  font-family: "TT Neoris Pro", Arial, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease !important;
+}
+
+.ashby-application-form-submit-button:hover {
+  color: var(--alteon-text) !important;
+  background: var(--alteon-accent) !important;
+}
+
+@media (max-width: 809px) {
+  :has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list)),
+  :has(> .ashby-job-posting-left-pane ~ .ashby-job-posting-right-pane) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  :has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list))
+    > :has(.ashby-job-board-filter),
+  :has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list))
+    > :has(.ashby-job-posting-brief-list) {
+    grid-column: 1 !important;
+  }
+
+  :has(> :has(.ashby-job-board-filter) ~ :has(.ashby-job-posting-brief-list))
+    > :has(.ashby-job-board-filter),
+  .ashby-job-posting-left-pane {
+    position: static !important;
+  }
+
+  .ashby-job-posting-brief-title {
+    min-height: 60px !important;
+    padding: 15px 120px 15px 16px !important;
+    font-size: 16px !important;
+  }
+
+  .ashby-job-posting-brief::after {
+    top: 12px;
+    right: 12px;
+    min-height: 36px;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .ashby-job-posting-brief-details {
+    min-height: 0 !important;
+    padding: 18px 16px !important;
+    font-size: 10px !important;
+  }
+
+  .ashby-job-posting-description,
+  .ashby-application-form-container {
+    padding: 22px 18px !important;
+  }
+}
