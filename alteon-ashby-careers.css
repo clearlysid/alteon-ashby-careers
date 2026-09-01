@@ -625,6 +625,15 @@ a[href="https://www.ashbyhq.com"] {
     margin-top: 0 !important;
   }
 
+  div[class*="_content_"]:has(.ashby-job-board-filter):has(
+      .ashby-job-posting-brief-list
+    )
+    > div:has(.ashby-job-board-filter)
+    *,
+  .ashby-job-posting-left-pane * {
+    position: static !important;
+  }
+
   .ashby-job-posting-right-pane {
     max-width: none !important;
   }
