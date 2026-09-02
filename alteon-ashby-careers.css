@@ -578,8 +578,22 @@ a[href="https://www.ashbyhq.com"] {
 }
 
 @media (max-width: 809px) {
-  button[class*="_filtersOpen_"] {
+  button[class*="_filtersOpen_"],
+  button[title="Close filters"] {
     display: none !important;
+  }
+
+  div[class*="_filtersContainer_"]:has(.ashby-job-board-filter),
+  div[class*="_filtersWindow_"]:has(.ashby-job-board-filter) {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  div[class*="_filtersWindow_"]:has(.ashby-job-board-filter) {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   div[class*="_content_"]:has(.ashby-job-board-filter):has(
