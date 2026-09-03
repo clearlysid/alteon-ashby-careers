@@ -218,6 +218,9 @@ select.ashby-job-board-filter:focus {
 }
 
 .ashby-job-posting-brief-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -502,6 +505,11 @@ a[href="https://www.ashbyhq.com"] {
   font-weight: 400 !important;
 }
 
+.ashby-job-posting-description strong,
+.ashby-job-posting-description b {
+  font-weight: 400 !important;
+}
+
 .ashby-job-posting-description h2 {
   font-size: 24px !important;
 }
@@ -637,7 +645,7 @@ a[href="https://www.ashbyhq.com"] {
 
   #root:has(.ashby-job-posting-heading) > div[class*="_sticky_"] {
     max-width: none !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 32px !important;
   }
 
   #root:has(.ashby-job-posting-heading)
@@ -676,6 +684,23 @@ a[href="https://www.ashbyhq.com"] {
     *,
   .ashby-job-posting-left-pane * {
     position: static !important;
+  }
+
+  div:has(> div > .ashby-job-board-filter) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    max-width: none !important;
+  }
+
+  .ashby-job-posting-left-pane {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px 16px !important;
+  }
+
+  .ashby-job-posting-left-pane > div {
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
   }
 
   .ashby-job-posting-right-pane {
