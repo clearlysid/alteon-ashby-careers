@@ -524,6 +524,11 @@ a[href="https://www.ashbyhq.com"] {
   margin: 0 0 18px !important;
 }
 
+.ashby-job-posting-description ul,
+.ashby-job-posting-description ol {
+  padding-left: 1.25em !important;
+}
+
 .ashby-job-posting-description li {
   margin-bottom: 8px !important;
 }
