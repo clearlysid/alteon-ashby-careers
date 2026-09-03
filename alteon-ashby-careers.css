@@ -508,6 +508,11 @@ a[href="https://www.ashbyhq.com"] {
   background: transparent !important;
 }
 
+.ashby-application-form-autofill-pane {
+  margin: 0 !important;
+  padding: 24px 0 0 !important;
+}
+
 .ashby-application-form-section-container {
   margin: 0 0 40px !important;
 }
