@@ -444,7 +444,7 @@ a[href="https://www.ashbyhq.com"] {
 
 .ashby-job-posting-right-pane-overview-tab,
 .ashby-job-posting-right-pane-application-tab {
-  padding: 16px 20px !important;
+  padding: 16px 0 !important;
   color: var(--alteon-text) !important;
   background: #fff !important;
   border: 0 !important;
@@ -454,8 +454,19 @@ a[href="https://www.ashbyhq.com"] {
   text-transform: uppercase !important;
 }
 
+#job-overview,
+#job-application-form,
+.ashby-job-posting-right-pane-tab-slider {
+  margin-left: 0 !important;
+}
+
 .ashby-job-posting-right-pane-tab-slider {
   background: var(--alteon-text) !important;
+}
+
+#job-application-form[aria-current="page"]
+  ~ .ashby-job-posting-right-pane-tab-slider {
+  transform: translateX(200px) !important;
 }
 
 .ashby-job-posting-description-container {
