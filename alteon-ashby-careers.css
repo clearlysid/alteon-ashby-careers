@@ -492,8 +492,14 @@ a[href="https://www.ashbyhq.com"] {
   margin: 40px 0 14px !important;
   color: var(--alteon-text) !important;
   font-family: "TT Neoris Pro", Arial, sans-serif !important;
-  font-weight: 600 !important;
+  font-weight: 400 !important;
   letter-spacing: -0.02em !important;
+}
+
+.ashby-job-posting-description h1 > strong,
+.ashby-job-posting-description h2 > strong,
+.ashby-job-posting-description h3 > strong {
+  font-weight: 400 !important;
 }
 
 .ashby-job-posting-description h2 {
