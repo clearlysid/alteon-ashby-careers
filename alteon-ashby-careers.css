@@ -520,8 +520,12 @@ a[href="https://www.ashbyhq.com"] {
 }
 
 .ashby-application-form-autofill-pane {
-  margin: 0 !important;
+  margin: 0 0 24px !important;
   padding: 24px 0 0 !important;
+}
+
+.ashby-application-form-autofill-input-title {
+  font-weight: 400 !important;
 }
 
 .ashby-application-form-section-container {
