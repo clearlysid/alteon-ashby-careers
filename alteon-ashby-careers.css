@@ -640,7 +640,7 @@ a[href="https://www.ashbyhq.com"] {
 
   #root:has(.ashby-job-posting-heading) {
     display: block !important;
-    padding: 0 12px !important;
+    padding: 0 !important;
   }
 
   #root:has(.ashby-job-posting-heading) > div[class*="_sticky_"] {
