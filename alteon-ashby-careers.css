@@ -411,7 +411,7 @@ a[href="https://www.ashbyhq.com"] {
   display: flex !important;
   flex-flow: row nowrap !important;
   align-items: start !important;
-  gap: 20px !important;
+  gap: 120px !important;
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -419,7 +419,7 @@ a[href="https://www.ashbyhq.com"] {
 
 .ashby-job-posting-left-pane {
   flex: 1 1 50% !important;
-  max-width: 460px !important;
+  max-width: 360px !important;
   position: sticky !important;
   top: 24px !important;
   width: 100% !important;
